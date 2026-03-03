@@ -16,14 +16,20 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".about-image", {
-        x: -60, opacity: 0, duration: 1, ease: "power3.out",
-        scrollTrigger: { trigger: ".about-image", start: "top 80%" },
-      });
-      gsap.from(".about-text", {
-        x: 60, opacity: 0, duration: 1, ease: "power3.out",
-        scrollTrigger: { trigger: ".about-text", start: "top 80%" },
-      });
+      const aboutImg = sectionRef.current?.querySelector(".about-image");
+      const aboutTxt = sectionRef.current?.querySelector(".about-text");
+      if (aboutImg) {
+        gsap.fromTo(aboutImg, { x: -60, opacity: 0 }, {
+          x: 0, opacity: 1, duration: 1, ease: "power3.out",
+          scrollTrigger: { trigger: aboutImg, start: "top 90%" },
+        });
+      }
+      if (aboutTxt) {
+        gsap.fromTo(aboutTxt, { x: 60, opacity: 0 }, {
+          x: 0, opacity: 1, duration: 1, ease: "power3.out",
+          scrollTrigger: { trigger: aboutTxt, start: "top 90%" },
+        });
+      }
 
       document.querySelectorAll<HTMLSpanElement>(".counter").forEach((el) => {
         const target = parseInt(el.dataset.target || "0");

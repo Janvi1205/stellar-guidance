@@ -21,11 +21,16 @@ const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const cards = sectionRef.current?.querySelectorAll(".service-card");
+    if (!cards?.length) return;
+
     const ctx = gsap.context(() => {
-      gsap.from(".service-card", {
-        y: 50, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.15,
-        scrollTrigger: { trigger: ".services-grid", start: "top 85%" },
-      });
+      gsap.fromTo(cards, 
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.15,
+          scrollTrigger: { trigger: sectionRef.current?.querySelector(".services-grid"), start: "top 90%" },
+        }
+      );
     }, sectionRef);
     return () => ctx.revert();
   }, []);

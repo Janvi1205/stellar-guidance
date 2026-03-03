@@ -59,9 +59,17 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground leading-tight">
             Guiding Lives Through the <span className="gradient-text">Stars</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-            With over 15 years of expertise in Vedic astrology, we've helped thousands of individuals across the globe navigate life's biggest decisions. Our consultations blend ancient wisdom with modern insights to provide actionable, personalized guidance.
-          </p>
+          <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-lg">
+            <p>
+              Astrology is more than prediction — it is understanding the deeper patterns shaping your life.
+            </p>
+            <p>
+              With over 15 years of experience in Vedic astrology, Aarpit has helped thousands of individuals gain clarity in love, career, finances, and personal growth.
+            </p>
+            <p>
+              Each birth chart is unique. Every consultation is designed to provide practical guidance, deeper insight, and meaningful direction — blending ancient wisdom with modern understanding.
+            </p>
+          </div>
           <div className="mt-10 grid grid-cols-3 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">

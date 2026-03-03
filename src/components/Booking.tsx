@@ -20,8 +20,15 @@ const Booking = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    alert("Thank you! We'll get back to you shortly.");
+
+    const phoneNumber = "17789973222";
+    const message = `Hello Astro Aarpit, I would like to book a consultation.%0A%0A*Details:*%0A- *Name:* ${form.name}%0A- *Email:* ${form.email}%0A- *Phone:* ${form.phone || "Not provided"}%0A- *Service:* ${form.service || "Not selected"}%0A- *Message:* ${form.message || "No message provided"}`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
     setForm({ name: "", email: "", phone: "", service: "", message: "" });
   };
 

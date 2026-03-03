@@ -25,9 +25,10 @@ const Services = () => {
     if (!cards?.length) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(cards, 
+      gsap.fromTo(cards,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.15,
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.15,
           scrollTrigger: { trigger: sectionRef.current?.querySelector(".services-grid"), start: "top 90%" },
         }
       );
@@ -48,7 +49,7 @@ const Services = () => {
 
         <div className="services-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover cursor-pointer text-left">
+            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left">
               <div className="h-48 overflow-hidden">
                 <img
                   src={service.image}
@@ -59,6 +60,18 @@ const Services = () => {
               <div className="p-7">
                 <h3 className="text-xl font-display font-semibold text-foreground">{service.title}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{service.description}</p>
+
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-2xl font-bold text-[#ea580c]">₹2,999</span>
+                  <a
+                    href={`https://wa.me/17789973222?text=${encodeURIComponent(`Hello Astro Aarpit, I want to consult about ${service.title}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-2 rounded-full border border-[#ea580c]/50 text-[#ea580c] font-semibold hover:bg-[#ea580c] hover:text-white transition-all duration-300 text-sm"
+                  >
+                    Book Now
+                  </a>
+                </div>
               </div>
             </div>
           ))}

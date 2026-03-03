@@ -1,16 +1,20 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Star, Heart, Briefcase, Home, Sparkles } from "lucide-react";
+import serviceBirthChart from "@/assets/service-birth-chart.jpg";
+import serviceLove from "@/assets/service-love.jpg";
+import serviceCareer from "@/assets/service-career.jpg";
+import serviceVastu from "@/assets/service-vastu.jpg";
+import serviceSpiritual from "@/assets/service-spiritual.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { icon: Star, title: "Birth Chart Analysis", description: "Deep dive into your natal chart to uncover your life's blueprint, strengths, and karmic patterns." },
-  { icon: Heart, title: "Love & Relationships", description: "Compatibility analysis and timing guidance for meaningful romantic connections." },
-  { icon: Briefcase, title: "Career & Finance", description: "Discover your professional destiny and optimal timing for business & financial decisions." },
-  { icon: Home, title: "Vastu & Relocation", description: "Astrological guidance for home energy alignment and the best places for you to thrive." },
-  { icon: Sparkles, title: "Spiritual Growth", description: "Unlock your spiritual potential through planetary insights and personalized remedies." },
+  { image: serviceBirthChart, title: "Birth Chart Analysis", description: "Deep dive into your natal chart to uncover your life's blueprint, strengths, and karmic patterns." },
+  { image: serviceLove, title: "Love & Relationships", description: "Compatibility analysis and timing guidance for meaningful romantic connections." },
+  { image: serviceCareer, title: "Career & Finance", description: "Discover your professional destiny and optimal timing for business & financial decisions." },
+  { image: serviceVastu, title: "Vastu & Relocation", description: "Astrological guidance for home energy alignment and the best places for you to thrive." },
+  { image: serviceSpiritual, title: "Spiritual Growth", description: "Unlock your spiritual potential through planetary insights and personalized remedies." },
 ];
 
 const Services = () => {
@@ -20,7 +24,7 @@ const Services = () => {
     const ctx = gsap.context(() => {
       gsap.from(".service-card", {
         y: 50, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.15,
-        scrollTrigger: { trigger: ".services-grid", start: "top 80%" },
+        scrollTrigger: { trigger: ".services-grid", start: "top 85%" },
       });
     }, sectionRef);
     return () => ctx.revert();
@@ -39,12 +43,18 @@ const Services = () => {
 
         <div className="services-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="service-card group bg-card rounded-2xl p-8 border border-border/50 card-hover cursor-pointer">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover cursor-pointer text-left">
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="text-xl font-display font-semibold text-foreground">{service.title}</h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">{service.description}</p>
+              <div className="p-7">
+                <h3 className="text-xl font-display font-semibold text-foreground">{service.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>

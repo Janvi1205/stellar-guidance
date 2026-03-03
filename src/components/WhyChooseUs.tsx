@@ -18,11 +18,15 @@ const WhyChooseUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const items = sectionRef.current?.querySelectorAll(".feature-item");
+    if (!items?.length) return;
     const ctx = gsap.context(() => {
-      gsap.from(".feature-item", {
-        y: 40, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1,
-        scrollTrigger: { trigger: ".features-grid", start: "top 80%" },
-      });
+      gsap.fromTo(items,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.1,
+          scrollTrigger: { trigger: sectionRef.current?.querySelector(".features-grid"), start: "top 90%" },
+        }
+      );
     }, sectionRef);
     return () => ctx.revert();
   }, []);

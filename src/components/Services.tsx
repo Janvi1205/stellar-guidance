@@ -38,12 +38,23 @@ const Services = () => {
 
   return (
     <section ref={sectionRef} id="services" className="section-padding">
+      {/* Ornamental divider */}
+      <div className="max-w-7xl mx-auto mb-16">
+        <div className="flex items-center justify-center gap-4">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
+          <span className="text-accent text-xl">✦</span>
+          <span className="text-primary text-2xl">✧</span>
+          <span className="text-accent text-xl">✦</span>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">Our Services</p>
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+        <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3">Our Services</p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground">
           What We <span className="gradient-text">Offer</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
+        <p className="mt-4 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Comprehensive astrology services tailored to every aspect of your life.
         </p>
 
@@ -57,17 +68,17 @@ const Services = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-7">
-                <h3 className="text-xl font-display font-semibold text-foreground">{service.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{service.description}</p>
+              <div className="p-6 md:p-7">
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground">{service.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed text-sm md:text-base">{service.description}</p>
 
                 <div className="mt-6 flex items-center justify-between">
-                  <span className="text-2xl font-bold text-[#ea580c]">₹2,999</span>
+                  <span className="text-xl md:text-2xl font-bold text-primary">₹2,999</span>
                   <a
                     href={`https://wa.me/17789973222?text=${encodeURIComponent(`Hello Astro Aarpit, I want to consult about ${service.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 rounded-full border border-[#ea580c]/50 text-[#ea580c] font-semibold hover:bg-[#ea580c] hover:text-white transition-all duration-300 text-sm"
+                    className="px-5 py-2 rounded-full border border-primary/50 text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-xs md:text-sm"
                   >
                     Book Now
                   </a>

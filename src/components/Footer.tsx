@@ -22,7 +22,7 @@ const Footer = () => (
         <div className="space-y-2 text-xs md:text-sm text-background/60">
           <p>info@astroaarpit.com</p>
           <p>+1 (778) 997-3222</p>
-          <p>Toronto, Canada</p>
+          
         </div>
       </div>
     </div>

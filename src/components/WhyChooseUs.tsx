@@ -1,17 +1,17 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Shield, Clock, Globe, Award, Users, Headphones } from "lucide-react";
+import { Target, Lock, Sparkles, BookOpen, CheckCircle, Headphones } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-  { icon: Shield, title: "100% Confidential", desc: "Your readings and personal details are always private and secure." },
-  { icon: Clock, title: "Flexible Scheduling", desc: "Book sessions that fit your timezone – available worldwide." },
-  { icon: Globe, title: "Global Clientele", desc: "Trusted by clients across Canada, US, UK, and 30+ countries." },
-  { icon: Award, title: "Certified Expert", desc: "Formally trained in Vedic astrology with decades of practice." },
-  { icon: Users, title: "Personalized Approach", desc: "Every consultation is unique and tailored to your specific chart." },
-  { icon: Headphones, title: "Post-Session Support", desc: "Follow-up guidance and remedies included with every session." },
+  { icon: Target, title: "Accurate & Practical Predictions", desc: "I focus on realistic and timing-based predictions using authentic Vedic astrology principles." },
+  { icon: Lock, title: "Confidential & Safe Consultation", desc: "Your personal details and life matters are treated with complete privacy and respect." },
+  { icon: Sparkles, title: "Personalised Remedies", desc: "No generic solutions. Every remedy is carefully tailored to your birth chart and life situation." },
+  { icon: BookOpen, title: "Years of Experience", desc: "With deep study and hands-on practice, I provide guidance based on knowledge and real consultation experience." },
+  { icon: CheckCircle, title: "Practical Solutions", desc: "My remedies are simple, doable, and aligned with your lifestyle." },
+  { icon: Headphones, title: "Continuous Support", desc: "Guidance doesn't end after the session. I ensure clarity and answer follow-up doubts when needed." },
 ];
 
 const WhyChooseUs = () => {
@@ -23,7 +23,8 @@ const WhyChooseUs = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(items,
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.1,
+        {
+          y: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.1,
           scrollTrigger: { trigger: sectionRef.current?.querySelector(".features-grid"), start: "top 90%" },
         }
       );

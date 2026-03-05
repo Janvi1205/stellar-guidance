@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import aboutImage from "@/assets/about-image.jpg";
+import aboutImage from "@/assets/AstroAarpit_Pic-removebg-preview.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { label: "Years Experience", value: 15 },
-  { label: "Happy Clients", value: 5000 },
-  { label: "Consultations", value: 12000 },
+  { label: "Years Experience", value: 3 },
+  { label: "Happy Clients", value: 1000 },
+  { label: "Consultations", value: 1000 },
 ];
 
 const About = () => {
@@ -59,7 +59,7 @@ const About = () => {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3 text-center">About Us</p>
+        <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3 text-center">About Me</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground leading-tight text-center mb-14">
           Guiding Lives Through the <span className="gradient-text">Stars</span>
         </h2>
@@ -69,11 +69,11 @@ const About = () => {
             <div className="relative max-w-md w-full">
               <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-accent/15 rounded-2xl blur-xl" />
               {/* Warm border frame like Legacy section */}
-              <div className="relative p-1 rounded-2xl bg-gradient-to-br from-primary/40 via-accent/30 to-primary/40 shadow-2xl">
+              <div className="relative p-1 rounded-2xl   w-fit mx-auto">
                 <img
                   src={aboutImage}
                   alt="Astrology consultation"
-                  className="relative rounded-xl w-full object-cover aspect-[4/3]"
+                  className="relative rounded-xl -mt-[22px] w-[440px] h-[640px] object-cover object-top"
                 />
               </div>
             </div>
@@ -82,14 +82,12 @@ const About = () => {
           <div className="about-text order-2 lg:order-2">
             <div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg">
               <p>
-                Astrology is more than prediction — it is understanding the deeper patterns shaping your life.
-              </p>
+                From a third-generation family rooted in the occult sciences, I carry forward a legacy that began with my grandfather — a skilled palmist and continued through my father, a dedicated Vedic astrologer. Continuing this sacred lineage, I have devoted my life to astrology, Vastu, and spiritual guidance not just as a profession, but as a family tradition and a spiritual calling.              </p>
               <p>
-                With over 15 years of experience in Vedic astrology, Aarpit has helped thousands of individuals gain clarity in love, career, finances, and personal growth.
-              </p>
+                As a Vedic Astrologer, Vastu Expert, and Spiritual Guide, I blend generational wisdom with modern practical application, focusing on clarity, accurate timing, and personalised remedies tailored to your life.              </p>
               <p>
-                Each birth chart is unique. Every consultation is designed to provide practical guidance, deeper insight, and meaningful direction — blending ancient wisdom with modern understanding.
-              </p>
+                I believe astrology should empower you, not create fear. My mission is to help you understand your karmic patterns, make confident decisions, and align your life with positive energies.              </p>
+
             </div>
 
             <p className="mt-8 text-sm md:text-base italic text-muted-foreground/80 border-l-2 border-accent/50 pl-4">

@@ -13,6 +13,14 @@ const Hero = () => {
       gsap.from(".hero-image", { x: 60, opacity: 0, duration: 1.2, delay: 0.4, ease: "power3.out" });
       gsap.from(".hero-shape", { scale: 0, opacity: 0, duration: 1.5, delay: 0.8, ease: "elastic.out(1,0.5)", stagger: 0.2 });
 
+      gsap.to(".hero-portrait-float", {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
       gsap.to(".om-symbol", {
         y: -15,
         duration: 5,
@@ -57,8 +65,8 @@ const Hero = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 pointer-events-none" />
 
-      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center w-full max-w-7xl mx-auto">
-        <div className="relative z-30">
+      <div className="relative z-20 grid  grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center w-full max-w-7xl mx-auto">
+        <div className="relative  z-30">
           <p className="hero-sub text-primary font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-4">Vedic Astrology Consultation</p>
           <div className="relative inline-block mb-2">
             <div className="absolute -inset-16 bg-[radial-gradient(circle,hsl(48_96%_53%_/_0.2)_0%,transparent_70%)] blur-3xl -z-10" />
@@ -80,7 +88,7 @@ const Hero = () => {
 
             {/* Trust Indicators */}
             <div className="mt-6 md:mt-8 flex flex-wrap gap-x-6 gap-y-2 opacity-70">
-              <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">⭐</span> 5,000+ Happy Clients</span>
+              <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">⭐</span> 1,000+ Happy Clients</span>
               <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🔒</span> 100% Confidential</span>
               <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🌍</span> Global Consultations</span>
             </div>
@@ -88,14 +96,11 @@ const Hero = () => {
         </div>
 
         <div className="hero-image relative flex justify-center lg:justify-end z-10">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/15 to-accent/15 rounded-3xl blur-2xl" />
-            <img
-              src={heroPortrait}
-              alt="Astrology consultant"
-              className="relative w-64 sm:w-72 md:w-80 lg:w-96 rounded-3xl object-cover shadow-2xl"
-            />
-          </div>
+          <img
+            src={heroPortrait}
+            alt="Astro Aarpit"
+            className="hero-portrait-float relative mt-[6.3rem] w-110 sm:w-[26rem] md:w-[30rem] lg:w-[38rem] object-contain"
+          />
         </div>
       </div>
     </section>

@@ -55,7 +55,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="testimonial-section max-w-4xl mx-auto text-center">
+      <div className="testimonial-section  max-w-4xl mx-auto text-center">
         <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3">Testimonials</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground">
           What Clients <span className="gradient-text">Say</span>

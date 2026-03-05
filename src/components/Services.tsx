@@ -4,17 +4,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import serviceBirthChart from "@/assets/service-birth-chart.jpg";
 import serviceLove from "@/assets/service-love.jpg";
 import serviceCareer from "@/assets/service-career.jpg";
-import serviceVastu from "@/assets/service-vastu.jpg";
-import serviceSpiritual from "@/assets/service-spiritual.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { image: serviceBirthChart, title: "Birth Chart Analysis", description: "Deep dive into your natal chart to uncover your life's blueprint, strengths, and karmic patterns." },
-  { image: serviceLove, title: "Love & Relationships", description: "Compatibility analysis and timing guidance for meaningful romantic connections." },
-  { image: serviceCareer, title: "Career & Finance", description: "Discover your professional destiny and optimal timing for business & financial decisions." },
-  { image: serviceVastu, title: "Vastu & Relocation", description: "Astrological guidance for home energy alignment and the best places for you to thrive." },
-  { image: serviceSpiritual, title: "Spiritual Growth", description: "Unlock your spiritual potential through planetary insights and personalized remedies." },
+  {
+    image: serviceBirthChart,
+    title: "Birth Chart Analysis",
+    description: "A focused reading of your Kundli uncovering your life's blueprint, strengths, and karmic patterns.",
+    time: "⏱ 15 mins",
+    price: "₹666",
+  },
+  {
+    image: serviceCareer,
+    title: "Detailed Kundli Reading",
+    description: "An in-depth birth chart consultation covering life path, planetary influences, and personalized guidance.",
+    time: "⏱ 30 mins",
+    price: "₹1,100",
+  },
+  {
+    image: serviceLove,
+    title: "Marriage & Couple Compatibility",
+    description: "Compatibility analysis for couples covering emotional, spiritual, and karmic alignment for a harmonious union.",
+    time: "⏱ Joint Session",
+    price: "₹1,999",
+  },
 ];
 
 const Services = () => {
@@ -58,7 +72,7 @@ const Services = () => {
           Comprehensive astrology services tailored to every aspect of your life.
         </p>
 
-        <div className="services-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="services-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {services.map((service) => (
             <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left">
               <div className="h-48 overflow-hidden">
@@ -72,8 +86,10 @@ const Services = () => {
                 <h3 className="text-lg md:text-xl font-display font-semibold text-foreground">{service.title}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed text-sm md:text-base">{service.description}</p>
 
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-xl md:text-2xl font-bold text-primary">₹2,999</span>
+              
+
+                <div className="mt-5 flex items-center justify-between">
+                  <span className="text-primary font-medium text-xs md:text-sm">{service.time}</span>
                   <a
                     href={`https://wa.me/17789973222?text=${encodeURIComponent(`Hello Astro Aarpit, I want to consult about ${service.title}`)}`}
                     target="_blank"
@@ -93,3 +109,4 @@ const Services = () => {
 };
 
 export default Services;
+

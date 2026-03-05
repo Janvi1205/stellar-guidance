@@ -29,9 +29,9 @@ const Legacy = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="legacy" className="section-padding bg-background">
+    <section ref={sectionRef} id="legacy" className="section-padding  bg-background">
       {/* Ornamental divider */}
-      <div className="max-w-7xl mx-auto mb-16">
+      <div className="max-w-7xl mx-auto mb-16 ">
         <div className="flex items-center justify-center gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/40 to-primary/60" />
           <span className="text-accent text-2xl">✦</span>
@@ -47,7 +47,7 @@ const Legacy = () => {
           My Legacy & <span className="gradient-text">Roots</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2  gap-16 items-center">
           {/* Text - left on desktop, below on mobile (order-2 on mobile) */}
           <div className="legacy-text order-2 lg:order-1">
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">In Loving Memory</p>

@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import heroPortrait from "@/assets/hero-portrait.png";
+
 
 const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const heroPortrait = "/hero-portrait.png";
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -57,7 +58,7 @@ const Hero = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 pointer-events-none" />
 
-      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center w-full max-w-7xl mx-auto">
+      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 md:gap-12  items-center w-full max-w-7xl mx-auto">
         <div className="relative z-30 text-center lg:text-left">
           <p className="hero-sub text-primary font-medium tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] sm:text-xs md:text-sm mb-3 md:mb-4">Vedic Astrology Consultation</p>
           <div className="relative inline-block mb-2">

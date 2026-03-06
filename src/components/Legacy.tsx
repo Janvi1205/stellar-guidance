@@ -47,8 +47,8 @@ const Legacy = () => {
           My Legacy & <span className="gradient-text">Roots</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* Text - left on desktop, below on mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-8 items-center ">
+         
           <div className="legacy-text order-2 lg:order-1">
             <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-3 md:mb-4">In Loving Memory</p>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 bg-clip-text text-transparent leading-tight mb-4 md:mb-6">
@@ -69,8 +69,8 @@ const Legacy = () => {
           </div>
 
           {/* Photo - right on desktop, top on mobile */}
-          <div className="legacy-image order-1 lg:order-2 flex justify-center">
-            <div className="relative w-48 sm:w-56 md:w-64 lg:w-72">
+         <div className="legacy-image order-1 lg:order-2 flex justify-center">
+            <div className="relative w-56 sm:w-64 md:w-80 lg:w-[400px]">
               {/* Sacred glow */}
               <div className="absolute -inset-3 md:-inset-4 bg-gradient-to-br from-amber-500/20 via-yellow-400/15 to-primary/20 rounded-2xl blur-2xl" />
               {/* Golden border frame */}

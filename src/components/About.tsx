@@ -64,15 +64,15 @@ const About = () => {
           Guiding Lives Through the <span className="gradient-text">Stars</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="about-image order-1 flex justify-center">
-            <div className="relative w-56 sm:w-64 md:w-72 lg:w-80">
+            <div className="relative w-72 sm:w-80 md:w-96 lg:w-[26rem]">
               <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-accent/15 rounded-2xl blur-xl" />
               <div className="relative w-full mx-auto">
                 <img
                   src={aboutImage}
                   alt="Astro Aarpit - Vedic Astrologer"
-                  className="relative rounded-xl w-full h-auto object-cover object-top"
+                 className="relative rounded-xl w-full h-[38rem] object-cover object-top"
                   loading="lazy"
                 />
               </div>

@@ -74,20 +74,19 @@ const Services = () => {
 
         <div className="services-grid mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
           {services.map((service) => (
-            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left w-full max-w-sm sm:max-w-none">
-              <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-5 md:p-7">
+            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left w-full max-w-sm sm:max-w-none flex flex-col">              <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+              <div className="p-5 md:p-7 flex flex-col flex-1">
                 <h3 className="text-base sm:text-lg md:text-xl font-display font-semibold text-foreground">{service.title}</h3>
                 <p className="mt-2 md:mt-3 text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">{service.description}</p>
 
-                <div className="mt-4 md:mt-5 flex items-center justify-between">
+                <div className="mt-auto pt-4 md:pt-5  flex items-center justify-between">
                   <span className="text-primary font-medium text-xs md:text-sm">{service.time}</span>
                   <a
                     href={`https://wa.me/17789973222?text=${encodeURIComponent(`Hello Astro Aarpit, I want to consult about ${service.title}`)}`}

@@ -66,16 +66,24 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="about-image order-1 flex justify-center">
-            <div className="relative w-72 sm:w-80 md:w-96 lg:w-[26rem]">
-              <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-accent/15 rounded-2xl blur-xl" />
-              <div className="relative w-full mx-auto">
+            <div className="relative w-72 sm:w-[23rem] md:w-96 lg:w-[26rem]">
+              <div className="absolute -inset-3 sm:-inset-3 md:-inset-3 lg:-inset-y-3 lg:-inset-x-16 bg-gradient-to-br h-80 sm:h-96 md:h-96 lg:h-[42rem] mt-10 from-primary/15 to-accent/15 rounded-2xl blur-xl" />              <div className="relative w-full mx-auto h-80 sm:h-96 md:h-96 lg:h-[38rem]">
                 <img
                   src={aboutImage}
                   alt="Astro Aarpit - Vedic Astrologer"
-                 className="relative rounded-xl w-full h-[38rem] object-cover object-top"
+                  className="rounded-xl w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
+              <div className="mt-4 text-center">
+                <p className="text-foreground font-display font-semibold text-lg md:text-xl tracking-wide">Aarpit N Sachdeva</p>
+                <p className="mt-1 text-xs md:text-sm font-medium tracking-[0.2em] uppercase">
+                  <span className="text-primary">✦</span>{" "}
+                  <span className=" text-primary">Blessed by Saturn</span>{" "}
+                  <span className="text-primary">✦</span>
+                </p>
+              </div>
+
             </div>
           </div>
 

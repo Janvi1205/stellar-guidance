@@ -53,12 +53,12 @@ const Services = () => {
   return (
     <section ref={sectionRef} id="services" className="section-padding">
       {/* Ornamental divider */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex items-center justify-center gap-4">
+      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+        <div className="flex items-center justify-center gap-3 md:gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
-          <span className="text-accent text-xl">✦</span>
-          <span className="text-primary text-2xl">✧</span>
-          <span className="text-accent text-xl">✦</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
+          <span className="text-primary text-xl md:text-2xl">✧</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
         </div>
       </div>
@@ -68,33 +68,32 @@ const Services = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground">
           What We <span className="gradient-text">Offer</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+        <p className="mt-3 md:mt-4 text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
           Comprehensive astrology services tailored to every aspect of your life.
         </p>
 
-        <div className="services-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="services-grid mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
           {services.map((service) => (
-            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left">
-              <div className="h-48 overflow-hidden">
+            <div key={service.title} className="service-card group bg-card rounded-2xl overflow-hidden border border-border/50 card-hover text-left w-full max-w-sm sm:max-w-none">
+              <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
-              <div className="p-6 md:p-7">
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground">{service.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed text-sm md:text-base">{service.description}</p>
+              <div className="p-5 md:p-7">
+                <h3 className="text-base sm:text-lg md:text-xl font-display font-semibold text-foreground">{service.title}</h3>
+                <p className="mt-2 md:mt-3 text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">{service.description}</p>
 
-              
-
-                <div className="mt-5 flex items-center justify-between">
+                <div className="mt-4 md:mt-5 flex items-center justify-between">
                   <span className="text-primary font-medium text-xs md:text-sm">{service.time}</span>
                   <a
                     href={`https://wa.me/17789973222?text=${encodeURIComponent(`Hello Astro Aarpit, I want to consult about ${service.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 rounded-full border border-primary/50 text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-xs md:text-sm"
+                    className="px-4 py-1.5 sm:px-5 sm:py-2 rounded-full border border-primary/50 text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-xs md:text-sm"
                   >
                     Book Now
                   </a>
@@ -109,4 +108,3 @@ const Services = () => {
 };
 
 export default Services;
-

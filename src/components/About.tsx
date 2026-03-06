@@ -19,13 +19,13 @@ const About = () => {
       const aboutImg = sectionRef.current?.querySelector(".about-image");
       const aboutTxt = sectionRef.current?.querySelector(".about-text");
       if (aboutImg) {
-        gsap.fromTo(aboutImg, { x: -60, opacity: 0 }, {
+        gsap.fromTo(aboutImg, { x: -40, opacity: 0 }, {
           x: 0, opacity: 1, duration: 1, ease: "power3.out",
           scrollTrigger: { trigger: aboutImg, start: "top 90%" },
         });
       }
       if (aboutTxt) {
-        gsap.fromTo(aboutTxt, { x: 60, opacity: 0 }, {
+        gsap.fromTo(aboutTxt, { x: 40, opacity: 0 }, {
           x: 0, opacity: 1, duration: 1, ease: "power3.out",
           scrollTrigger: { trigger: aboutTxt, start: "top 90%" },
         });
@@ -47,58 +47,60 @@ const About = () => {
 
   return (
     <section ref={sectionRef} id="about" className="section-padding bg-secondary/30">
-      {/* Ornamental divider at top */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex items-center justify-center gap-4">
+      {/* Ornamental divider */}
+      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+        <div className="flex items-center justify-center gap-3 md:gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
-          <span className="text-accent text-xl">✦</span>
-          <span className="text-primary text-2xl">☽</span>
-          <span className="text-accent text-xl">✦</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
+          <span className="text-primary text-xl md:text-2xl">☽</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto">
         <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3 text-center">About Me</p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground leading-tight text-center mb-14">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground leading-tight text-center mb-10 md:mb-14">
           Guiding Lives Through the <span className="gradient-text">Stars</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="about-image order-1 lg:order-1 flex justify-center">
-            <div className="relative max-w-md w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="about-image order-1 flex justify-center">
+            <div className="relative w-56 sm:w-64 md:w-72 lg:w-80">
               <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-accent/15 rounded-2xl blur-xl" />
-              {/* Warm border frame like Legacy section */}
-              <div className="relative p-1 rounded-2xl   w-fit mx-auto">
+              <div className="relative w-full mx-auto">
                 <img
                   src={aboutImage}
-                  alt="Astrology consultation"
-                  className="relative rounded-xl -mt-[22px] w-[440px] h-[640px] object-cover object-top"
+                  alt="Astro Aarpit - Vedic Astrologer"
+                  className="relative rounded-xl w-full h-auto object-cover object-top"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
 
-          <div className="about-text order-2 lg:order-2">
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg">
+          <div className="about-text order-2">
+            <div className="space-y-3 md:space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">
               <p>
-                From a third-generation family rooted in the occult sciences, I carry forward a legacy that began with my grandfather — a skilled palmist and continued through my father, a dedicated Vedic astrologer. Continuing this sacred lineage, I have devoted my life to astrology, Vastu, and spiritual guidance not just as a profession, but as a family tradition and a spiritual calling.              </p>
+                From a third-generation family rooted in the occult sciences, I carry forward a legacy that began with my grandfather — a skilled palmist and continued through my father, a dedicated Vedic astrologer. Continuing this sacred lineage, I have devoted my life to astrology, Vastu, and spiritual guidance not just as a profession, but as a family tradition and a spiritual calling.
+              </p>
               <p>
-                As a Vedic Astrologer, Vastu Expert, and Spiritual Guide, I blend generational wisdom with modern practical application, focusing on clarity, accurate timing, and personalised remedies tailored to your life.              </p>
+                As a Vedic Astrologer, Vastu Expert, and Spiritual Guide, I blend generational wisdom with modern practical application, focusing on clarity, accurate timing, and personalised remedies tailored to your life.
+              </p>
               <p>
-                I believe astrology should empower you, not create fear. My mission is to help you understand your karmic patterns, make confident decisions, and align your life with positive energies.              </p>
-
+                I believe astrology should empower you, not create fear. My mission is to help you understand your karmic patterns, make confident decisions, and align your life with positive energies.
+              </p>
             </div>
 
-            <p className="mt-8 text-sm md:text-base italic text-muted-foreground/80 border-l-2 border-accent/50 pl-4">
+            <p className="mt-6 md:mt-8 text-sm md:text-base italic text-muted-foreground/80 border-l-2 border-accent/50 pl-4">
               "The cosmos is within us. We are made of star-stuff."
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-4 md:gap-6">
+            <div className="mt-8 md:mt-10 grid grid-cols-3 gap-3 md:gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <span className="counter block text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary" data-target={stat.value}>0+</span>
-                  <span className="text-xs md:text-sm text-muted-foreground mt-1 block">{stat.label}</span>
+                  <span className="counter block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-primary" data-target={stat.value}>0+</span>
+                  <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-1 block">{stat.label}</span>
                 </div>
               ))}
             </div>

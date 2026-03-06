@@ -45,41 +45,41 @@ const Testimonials = () => {
   return (
     <section ref={sectionRef} id="testimonials" className="section-padding">
       {/* Ornamental divider */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex items-center justify-center gap-4">
+      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+        <div className="flex items-center justify-center gap-3 md:gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
-          <span className="text-accent text-xl">✦</span>
-          <span className="text-primary text-2xl">❃</span>
-          <span className="text-accent text-xl">✦</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
+          <span className="text-primary text-xl md:text-2xl">❃</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
         </div>
       </div>
 
-      <div className="testimonial-section  max-w-4xl mx-auto text-center">
+      <div className="testimonial-section max-w-4xl mx-auto text-center">
         <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3">Testimonials</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground">
           What Clients <span className="gradient-text">Say</span>
         </h2>
 
-        <div ref={cardRef} className="mt-14 bg-card rounded-2xl p-8 md:p-14 border border-border/50 shadow-lg relative overflow-hidden">
-          {/* Subtle decorative quote mark */}
-          <span className="absolute top-4 left-6 text-6xl md:text-8xl text-primary/[0.06] font-display leading-none select-none">"</span>
-          <div className="flex justify-center gap-1 mb-6">
+        <div ref={cardRef} className="mt-10 md:mt-14 bg-card rounded-2xl p-6 sm:p-8 md:p-14 border border-border/50 shadow-lg relative overflow-hidden">
+          <span className="absolute top-3 left-4 sm:top-4 sm:left-6 text-5xl sm:text-6xl md:text-8xl text-primary/[0.06] font-display leading-none select-none">"</span>
+          <div className="flex justify-center gap-1 mb-4 md:mb-6">
             {Array.from({ length: t.rating }).map((_, i) => (
               <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-accent text-accent" />
             ))}
           </div>
-          <p className="text-base md:text-xl text-foreground leading-relaxed italic relative z-10">"{t.text}"</p>
-          <p className="mt-6 font-display font-semibold text-foreground text-sm md:text-base">{t.name}</p>
+          <p className="text-sm sm:text-base md:text-xl text-foreground leading-relaxed italic relative z-10">"{t.text}"</p>
+          <p className="mt-4 md:mt-6 font-display font-semibold text-foreground text-sm md:text-base">{t.name}</p>
           <p className="text-xs md:text-sm text-muted-foreground">{t.location}</p>
         </div>
 
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${i === current ? "bg-primary w-7 md:w-8" : "bg-border hover:bg-muted-foreground/30"}`}
+              aria-label={`View testimonial ${i + 1}`}
+              className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${i === current ? "bg-primary w-6 md:w-8" : "bg-border hover:bg-muted-foreground/30"}`}
             />
           ))}
         </div>

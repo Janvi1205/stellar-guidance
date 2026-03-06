@@ -14,14 +14,14 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
-          <img src={logo} alt="Astro Aarpit Logo" className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover" />
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30" role="navigation" aria-label="Main navigation">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between h-14 md:h-16">
+        <a href="#" className="flex items-center gap-2 font-display text-lg md:text-xl font-bold text-foreground">
+          <img src={logo} alt="Astro Aarpit Logo" className="w-7 h-7 md:w-9 md:h-9 rounded-full object-cover" width="36" height="36" />
           Astro<span className="text-primary">Aarpit</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               {link.label}
@@ -32,13 +32,13 @@ const Navbar = () => {
           </a>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Toggle menu">
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-6 py-4 space-y-3">
+        <div className="md:hidden bg-background border-b border-border px-4 sm:px-6 py-3 space-y-2.5">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               {link.label}

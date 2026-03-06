@@ -35,12 +35,12 @@ const WhyChooseUs = () => {
   return (
     <section ref={sectionRef} className="section-padding bg-secondary/30">
       {/* Ornamental divider */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex items-center justify-center gap-4">
+      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+        <div className="flex items-center justify-center gap-3 md:gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
-          <span className="text-accent text-xl">✦</span>
-          <span className="text-primary text-2xl">⟡</span>
-          <span className="text-accent text-xl">✦</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
+          <span className="text-primary text-xl md:text-2xl">⟡</span>
+          <span className="text-accent text-lg md:text-xl">✦</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
         </div>
       </div>
@@ -51,14 +51,14 @@ const WhyChooseUs = () => {
           Trusted by <span className="gradient-text">Thousands</span>
         </h2>
 
-        <div className="features-grid mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="features-grid mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="feature-item flex flex-col items-center text-center p-6 rounded-2xl hover:bg-card/60 transition-colors duration-300">
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+            <div key={feature.title} className="feature-item flex flex-col items-center text-center p-5 md:p-6 rounded-2xl hover:bg-card/60 transition-colors duration-300">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3 md:mb-4">
+                <feature.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-primary" />
               </div>
-              <h3 className="text-base md:text-lg font-display font-semibold text-foreground">{feature.title}</h3>
-              <p className="mt-2 text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.desc}</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-display font-semibold text-foreground">{feature.title}</h3>
+              <p className="mt-1.5 md:mt-2 text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>

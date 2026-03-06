@@ -14,19 +14,11 @@ const Hero = () => {
       gsap.from(".hero-shape", { scale: 0, opacity: 0, duration: 1.5, delay: 0.8, ease: "elastic.out(1,0.5)", stagger: 0.2 });
 
       gsap.to(".hero-portrait-float", {
-        y: -20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
+        y: -20, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut"
       });
 
       gsap.to(".om-symbol", {
-        y: -15,
-        duration: 5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
+        y: -15, duration: 5, repeat: -1, yoyo: true, ease: "sine.inOut"
       });
     }, sectionRef);
     return () => ctx.revert();
@@ -35,7 +27,7 @@ const Hero = () => {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center section-padding overflow-hidden bg-background">
       {/* Om Symbol */}
-      <div className="om-symbol absolute top-1/2 left-[15%] -translate-y-1/2 opacity-[0.06] pointer-events-none blur-[1px] text-[250px] md:text-[350px] font-bold text-primary select-none leading-none">
+      <div className="om-symbol absolute top-1/2 left-[10%] md:left-[15%] -translate-y-1/2 opacity-[0.06] pointer-events-none blur-[1px] text-[150px] sm:text-[200px] md:text-[300px] lg:text-[350px] font-bold text-primary select-none leading-none">
         ॐ
       </div>
 
@@ -59,38 +51,38 @@ const Hero = () => {
       </div>
 
       {/* Floating shapes */}
-      <div className="hero-shape absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/5 animate-float" />
-      <div className="hero-shape absolute top-40 right-20 w-32 h-32 rounded-full bg-accent/10 animate-float-slow" />
+      <div className="hero-shape absolute top-20 left-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/5 animate-float" />
+      <div className="hero-shape absolute top-40 right-10 md:right-20 w-24 h-24 md:w-32 md:h-32 rounded-full bg-accent/10 animate-float-slow" />
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 pointer-events-none" />
 
-      <div className="relative z-20 grid  grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center w-full max-w-7xl mx-auto">
-        <div className="relative  z-30">
-          <p className="hero-sub text-primary font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-4">Vedic Astrology Consultation</p>
+      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center w-full max-w-7xl mx-auto">
+        <div className="relative z-30 text-center lg:text-left">
+          <p className="hero-sub text-primary font-medium tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] sm:text-xs md:text-sm mb-3 md:mb-4">Vedic Astrology Consultation</p>
           <div className="relative inline-block mb-2">
-            <div className="absolute -inset-16 bg-[radial-gradient(circle,hsl(48_96%_53%_/_0.2)_0%,transparent_70%)] blur-3xl -z-10" />
-            <h1 className="hero-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] text-foreground relative z-10">
+            <div className="absolute -inset-12 md:-inset-16 bg-[radial-gradient(circle,hsl(48_96%_53%_/_0.2)_0%,transparent_70%)] blur-3xl -z-10" />
+            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.1] text-foreground relative z-10">
               Discover Your <span className="gradient-text">Cosmic Path</span>
             </h1>
           </div>
-          <p className="hero-sub mt-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+          <p className="hero-sub mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
             Unlock the secrets of your birth chart with personalized Vedic astrology consultations. Guidance for love, career, health & spiritual growth.
           </p>
 
-          <div className="hero-cta-wrap mt-8 md:mt-10 block">
+          <div className="hero-cta-wrap mt-6 md:mt-10 block">
             <a
               href="#booking"
-              className="shine-sweep relative z-50 inline-block px-7 py-3.5 md:px-8 md:py-4 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.03] transition-all duration-300 text-sm md:text-base"
+              className="shine-sweep relative z-50 inline-block px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.03] transition-all duration-300 text-xs sm:text-sm md:text-base"
             >
               ✨ Book My Consultation
             </a>
 
             {/* Trust Indicators */}
-            <div className="mt-6 md:mt-8 flex flex-wrap gap-x-6 gap-y-2 opacity-70">
-              <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">⭐</span> 1,000+ Happy Clients</span>
-              <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🔒</span> 100% Confidential</span>
-              <span className="text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🌍</span> Global Consultations</span>
+            <div className="mt-5 md:mt-8 flex flex-wrap justify-center lg:justify-start gap-x-4 sm:gap-x-6 gap-y-2 opacity-70">
+              <span className="text-[11px] sm:text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">⭐</span> 1,000+ Happy Clients</span>
+              <span className="text-[11px] sm:text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🔒</span> 100% Confidential</span>
+              <span className="text-[11px] sm:text-xs md:text-[13px] font-medium flex items-center gap-1.5"><span className="text-accent">🌍</span> Global Consultations</span>
             </div>
           </div>
         </div>
@@ -98,8 +90,8 @@ const Hero = () => {
         <div className="hero-image relative flex justify-center lg:justify-end z-10">
           <img
             src={heroPortrait}
-            alt="Astro Aarpit"
-            className="hero-portrait-float relative mt-[6.3rem] w-110 sm:w-[26rem] md:w-[30rem] lg:w-[38rem] object-contain"
+            alt="Astro Aarpit - Vedic Astrologer"
+            className="hero-portrait-float relative mt-8 sm:mt-12 md:mt-16 lg:mt-[6.3rem] w-60 sm:w-72 md:w-[26rem] lg:w-[32rem] xl:w-[38rem] object-contain"
           />
         </div>
       </div>

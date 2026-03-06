@@ -49,7 +49,7 @@ const Legacy = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Text - left on desktop, below on mobile */}
-          <div className="legacy-text order-2 lg:order-1">
+          <div className="legacy-text order-2 lg:order-1 pl-2 sm:pl-4 md:pl-6 lg:pl-8">
             <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-3 md:mb-4">In Loving Memory</p>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 bg-clip-text text-transparent leading-tight mb-4 md:mb-6">
               Late. Sri Mulkh Raj Sachdeva

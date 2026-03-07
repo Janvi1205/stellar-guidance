@@ -1,27 +1,31 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Legacy from "@/components/Legacy";
-import Services from "@/components/Services";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Testimonials from "@/components/Testimonials";
-import Booking from "@/components/Booking";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+const About = lazy(() => import("@/components/About"));
+const Legacy = lazy(() => import("@/components/Legacy"));
+const Services = lazy(() => import("@/components/Services"));
+const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Booking = lazy(() => import("@/components/Booking"));
+const Footer = lazy(() => import("@/components/Footer"));
+const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <About />
-      <Legacy />
-      <Services />
-      <WhyChooseUs />
-      <Testimonials />
-      <Booking />
-      <Footer />
-      <WhatsAppButton />
+      <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center text-primary/50">Loading...</div>}>
+        <About />
+        <Legacy />
+        <Services />
+        <WhyChooseUs />
+        <Testimonials />
+        <Booking />
+        <Footer />
+        <WhatsAppButton />
+      </Suspense>
     </div>
   );
 };

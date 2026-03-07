@@ -92,6 +92,9 @@ const Hero = () => {
           <img
             src={heroPortrait}
             alt="Astro Aarpit - Vedic Astrologer"
+            width={608}
+            height={608}
+            fetchPriority="high"
             className="hero-portrait-float relative mt-8 sm:mt-12 md:mt-16 lg:mt-[6.3rem] w-60 sm:w-72 md:w-[26rem] lg:w-[32rem] xl:w-[38rem] object-contain"
           />
         </div>

@@ -52,12 +52,12 @@ const Legacy = () => {
           <div className="legacy-text order-2 lg:order-1">
             <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-3 md:mb-4">In Loving Memory</p>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 bg-clip-text text-transparent leading-tight mb-4 md:mb-6">
-              Late. Sri Mulkh Raj Sachdeva
+              Late. Sri Mulkh Raj Sachdeva Ji
             </h3>
             <div className="space-y-3 md:space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">
               <p>
                 My journey in astrology stands on the blessings and legacy of my grandfather,
-                Late Sri Mulkh Raj Sachdeva — a respected palmist who devoted his life to the
+                Late Sri Mulkh Raj Sachdeva ji — a respected palmist who devoted his life to the
                 sacred science of hand reading. His wisdom, discipline, and dedication to guiding
                 people through spiritual knowledge laid the foundation for our family's path in
                 the occult sciences.

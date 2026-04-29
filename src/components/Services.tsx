@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import serviceBirthChart from "@/assets/service-birth-chart.jpg";
 import serviceLove from "@/assets/service-love.jpg";
 import serviceCareer from "@/assets/service-career.jpg";
+import serviceCareerConsultation from "@/assets/service-career-consultation.webp";
+import serviceForeignTravel from "@/assets/service-foreign-travel.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +30,20 @@ const services = [
     description: "Compatibility analysis for couples covering emotional, spiritual, and karmic alignment for a harmonious union.",
     time: "⏱ Joint Session",
     price: "₹1,999",
+  },
+  {
+    image: serviceCareerConsultation,
+    title: "Career Consultation",
+    description: "Personalized career reading using your birth chart to reveal ideal career paths, auspicious timing, and planetary influences on your professional growth.",
+    time: "⏱ 30 mins",
+    price: "₹1,100",
+  },
+  {
+    image: serviceForeignTravel,
+    title: "Foreign Travel / Foreign Settlement",
+    description: "Astrological guidance on favourable timing, suitable countries, and planetary yogas supporting your foreign travel and overseas settlement prospects.",
+    time: "⏱ 30 mins",
+    price: "₹1,100",
   },
 ];
 

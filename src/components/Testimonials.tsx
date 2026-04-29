@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
-  { name: "Priya M.", location: "Toronto, Canada", text: "The birth chart reading was incredibly accurate. It gave me clarity on my career path that I hadn't found anywhere else. Highly recommend!", rating: 5 },
-  { name: "James R.", location: "New York, USA", text: "I was skeptical at first, but the consultation was deeply insightful. The remedies suggested have genuinely improved my relationships.", rating: 5 },
-  { name: "Anita S.", location: "London, UK", text: "An extraordinary experience. The level of detail and accuracy in the reading was mind-blowing. I've been a returning client for 3 years.", rating: 5 },
-  { name: "David K.", location: "Melbourne, Australia", text: "Professional, compassionate, and incredibly knowledgeable. Every session leaves me feeling more aligned with my purpose.", rating: 5 },
+  { name: "Sophie K.", location: "Toronto, Canada", text: "Aarpit's reading was incredibly accurate. He predicted a major career shift 3 months before it happened. I was completely blown away by the precision!", rating: 5 },
+  { name: "James R.", location: "New York, USA", text: "I came with doubts and left with complete clarity. His Kundli analysis was so detailed and the remedies he suggested were simple yet effective.", rating: 5 },
+  { name: "Simran D.", location: "Vancouver, Canada", text: "The marriage compatibility reading he did for me and my partner gave us so much confidence. Truly a gifted astrologer from a legendary lineage.", rating: 5 },
+  { name: "James T.", location: "Melbourne, Australia", text: "What sets Aarpit apart is how practical his guidance is. No fear, no drama — just clear, honest, and deeply accurate readings.", rating: 5 },
 ];
 
 const Testimonials = () => {
@@ -26,62 +26,130 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (cardRef.current) {
-      gsap.fromTo(cardRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
+      gsap.fromTo(cardRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" });
     }
   }, [current]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".testimonial-section", {
-        opacity: 0, y: 40, duration: 0.8,
-        scrollTrigger: { trigger: ".testimonial-section", start: "top 80%" },
+      gsap.from(".testimonial-inner", {
+        opacity: 0, y: 40, duration: 0.9,
+        scrollTrigger: { trigger: ".testimonial-inner", start: "top 80%" },
       });
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
+  const prev = () => setCurrent((p) => (p - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent((p) => (p + 1) % testimonials.length);
+
   const t = testimonials[current];
 
   return (
-    <section ref={sectionRef} id="testimonials" className="section-padding">
-      {/* Ornamental divider */}
-      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
-        <div className="flex items-center justify-center gap-3 md:gap-4">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-primary/50" />
-          <span className="text-accent text-lg md:text-xl">✦</span>
-          <span className="text-primary text-xl md:text-2xl">❃</span>
-          <span className="text-accent text-lg md:text-xl">✦</span>
-          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-primary/30 to-primary/50" />
-        </div>
+    <section
+      ref={sectionRef}
+      id="testimonials"
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{ background: "linear-gradient(135deg, #0d0a07 0%, #130e06 40%, #0a0806 100%)" }}
+    >
+      {/* Ambient glowing orbs */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(234,120,20,0.13) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(234,120,20,0.07) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%)" }} />
       </div>
 
-      <div className="testimonial-section max-w-4xl mx-auto text-center">
-        <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-3">Testimonials</p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground">
-          What Clients <span className="gradient-text">Say</span>
-        </h2>
+      <div className="testimonial-inner relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
 
-        <div ref={cardRef} className="mt-10 md:mt-14 bg-card rounded-2xl p-6 sm:p-8 md:p-14 border border-border/50 shadow-lg relative overflow-hidden">
-          <span className="absolute top-3 left-4 sm:top-4 sm:left-6 text-5xl sm:text-6xl md:text-8xl text-primary/[0.06] font-display leading-none select-none">"</span>
-          <div className="flex justify-center gap-1 mb-4 md:mb-6">
-            {Array.from({ length: t.rating }).map((_, i) => (
-              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-accent text-accent" />
-            ))}
-          </div>
-          <p className="text-sm sm:text-base md:text-xl text-foreground leading-relaxed italic relative z-10">"{t.text}"</p>
-          <p className="mt-4 md:mt-6 font-display font-semibold text-foreground text-sm md:text-base">{t.name}</p>
-          <p className="text-xs md:text-sm text-muted-foreground">{t.location}</p>
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 mb-6">
+          <span className="text-orange-400 text-xs font-semibold tracking-[0.2em] uppercase">✦ Testimonials</span>
         </div>
 
-        <div className="flex justify-center gap-2 mt-6 md:mt-8">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              aria-label={`View testimonial ${i + 1}`}
-              className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${i === current ? "bg-primary w-6 md:w-8" : "bg-border hover:bg-muted-foreground/30"}`}
-            />
-          ))}
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+          Voices of{" "}
+          <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
+            Transformation
+          </span>
+        </h2>
+
+        {/* Thin gold divider */}
+        <div className="mx-auto mt-4 mb-10 w-16 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
+
+        {/* Card */}
+        <div
+          ref={cardRef}
+          className="relative rounded-2xl border border-orange-500/15 p-8 md:p-12 shadow-2xl overflow-hidden"
+          style={{ background: "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(234,120,20,0.05) 100%)", backdropFilter: "blur(12px)" }}
+        >
+          {/* Giant decorative quote */}
+          <span
+            className="absolute top-2 left-5 font-display leading-none select-none text-[7rem] md:text-[9rem]"
+            style={{ color: "rgba(234,120,20,0.12)", lineHeight: 1 }}
+          >
+            "
+          </span>
+
+          {/* Stars */}
+          <div className="flex justify-center gap-1 mb-6 relative z-10">
+            {Array.from({ length: t.rating }).map((_, i) => (
+              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-amber-400 text-amber-400" />
+            ))}
+          </div>
+
+          {/* Quote text */}
+          <p className="relative z-10 text-base md:text-xl text-white/85 leading-relaxed italic">
+            "{t.text}"
+          </p>
+
+          {/* Author */}
+          <p className="mt-6 font-display font-bold text-orange-400 text-sm md:text-base relative z-10">
+            {t.name}
+          </p>
+          <p className="text-xs md:text-sm text-white/40 tracking-widest uppercase mt-1 relative z-10">
+            {t.location}
+          </p>
+
+          {/* Bottom glow line */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
+        </div>
+
+        {/* Navigation */}
+        <div className="mt-8 flex items-center justify-center gap-5">
+          <button
+            onClick={prev}
+            aria-label="Previous"
+            className="w-9 h-9 rounded-full border border-orange-500/30 flex items-center justify-center text-orange-400 hover:bg-orange-500/15 transition-all duration-300"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex gap-2">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === current
+                    ? "w-7 bg-orange-400"
+                    : "w-2 bg-white/20 hover:bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            aria-label="Next"
+            className="w-9 h-9 rounded-full border border-orange-500/30 flex items-center justify-center text-orange-400 hover:bg-orange-500/15 transition-all duration-300"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </section>

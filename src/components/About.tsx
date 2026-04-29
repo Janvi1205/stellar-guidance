@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import aboutImage from "@/assets/AstroAarpit_Pic-removebg-preview.png";
+import aboutImage from "@/assets/aarpit2.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +67,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="about-image order-1 flex justify-center">
             <div className="relative w-72 sm:w-[23rem] md:w-96 lg:w-[26rem]">
-              <div className="absolute -inset-3 sm:-inset-3 md:-inset-3 lg:-inset-y-3 lg:-inset-x-16 bg-gradient-to-br h-80 sm:h-96 md:h-96 lg:h-[42rem] mt-10 from-primary/15 to-accent/15 rounded-2xl blur-xl" />              <div className="relative w-full mx-auto h-80 sm:h-96 md:h-96 lg:h-[38rem]">
+              <div className="absolute -inset-3 sm:-inset-3 md:-inset-3 lg:-inset-y-3 lg:-inset-x-16 bg-gradient-to-br h-72 sm:h-96 md:h-96 lg:h-[36rem] mt-10 from-primary/15 to-accent/15 rounded-2xl blur-xl" />              <div className="relative w-full mx-auto h-72 sm:h-96 md:h-96 lg:h-[32rem]">
                 <img
                   src={aboutImage}
                   alt="Astro Aarpit - Vedic Astrologer"

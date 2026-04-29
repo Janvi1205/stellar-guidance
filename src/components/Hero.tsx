@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const heroPortrait = "/hero-portrait.png";
+  const heroPortrait = "/hero-portrait.webp";
 
   useEffect(() => {
     const ctx = gsap.context(() => {

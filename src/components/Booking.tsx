@@ -59,11 +59,12 @@ const Booking = () => {
             <input type="tel" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
             <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className={inputClass}>
               <option value="">Select Service</option>
-              <option value="birth-chart">Birth Chart Analysis</option>
-              <option value="love">Love & Relationships</option>
-              <option value="career">Career & Finance</option>
-              <option value="vastu">Vastu & Relocation</option>
-              <option value="spiritual">Spiritual Growth</option>
+              <option value="kundli">Detailed Kundli Reading</option>
+              <option value="marriage">Marriage & Couple Compatibility</option>
+              <option value="career">Career Consultation</option>
+              <option value="foreign">Foreign Travel / Foreign Settlement</option>
+              <option value="numerology">Numerology Consultation</option>
+              <option value="vastu">Vaastu Consultation</option>
             </select>
           </div>
           <textarea placeholder="Your Message (optional)" rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className={`${inputClass} resize-none`} />

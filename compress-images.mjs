@@ -16,6 +16,8 @@ const tasks = [
   { src: path.join(assetsDir, "service-foreign-travel.png"),     out: path.join(assetsDir, "service-foreign-travel.webp"),     opts: { quality: 80, effort: 6 } },
   { src: path.join(assetsDir, "logo.png"),                       out: path.join(assetsDir, "logo.webp"),                       opts: { quality: 90, effort: 6 } },
   { src: path.join(assetsDir, "AstroAarpit_Pic-removebg-preview.png"), out: path.join(assetsDir, "AstroAarpit_Pic-removebg-preview.webp"), opts: { quality: 82, effort: 6 } },
+  { src: path.join(assetsDir, "service-numerology.png"),       out: path.join(assetsDir, "service-numerology.webp"),       opts: { quality: 80, effort: 6 } },
+  { src: path.join(assetsDir, "service-vastu.jpg"),            out: path.join(assetsDir, "service-vastu.webp"),            opts: { quality: 80, effort: 6 } },
   // Public hero portrait
   { src: path.join(publicDir, "hero-portrait.png"),              out: path.join(publicDir, "hero-portrait.webp"),              opts: { quality: 85, effort: 6 } },
 ];

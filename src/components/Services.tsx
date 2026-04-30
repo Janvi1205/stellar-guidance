@@ -1,22 +1,16 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import serviceBirthChart from "@/assets/service-birth-chart.jpg";
 import serviceLove from "@/assets/service-love.jpg";
 import serviceCareer from "@/assets/service-career.jpg";
 import serviceCareerConsultation from "@/assets/service-career-consultation.webp";
 import serviceForeignTravel from "@/assets/service-foreign-travel.webp";
+import serviceVastu from "@/assets/service-vastu.webp";
+import serviceNumerology from "@/assets/service-numerology.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  {
-    image: serviceBirthChart,
-    title: "Birth Chart Analysis",
-    description: "A focused reading of your Kundli uncovering your life's blueprint, strengths, and karmic patterns.",
-    time: "⏱ 15 mins",
-    price: "₹666",
-  },
   {
     image: serviceCareer,
     title: "Detailed Kundli Reading",
@@ -44,6 +38,20 @@ const services = [
     description: "Astrological guidance on favourable timing, suitable countries, and planetary yogas supporting your foreign travel and overseas settlement prospects.",
     time: "⏱ 30 mins",
     price: "₹1,100",
+  },
+  {
+    image: serviceNumerology,
+    title: "Numerology Consultation",
+    description: "Discover the hidden power of numbers in your life. Understand your destiny, personality, and favorable numbers for success.",
+    time: "⏱ 30 mins",
+    price: "₹1,100",
+  },
+  {
+    image: serviceVastu,
+    title: "Vaastu Consultation",
+    description: "Harmonize your living or workspace with the cosmic energies of Vaastu Shastra to attract peace, prosperity, and health.",
+    time: "⏱ 45 mins",
+    price: "₹2,100",
   },
 ];
 

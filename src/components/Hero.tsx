@@ -68,7 +68,7 @@ const Hero = () => {
             </h1>
           </div>
           <p className="hero-sub mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
-            Unlock the secrets of your birth chart with personalized Vedic astrology consultations. Guidance for love, career, health & spiritual growth.
+            Unlock the secrets of your birth chart with personalized Vedic astrology consultations. Guidance for love, career, and life path.
           </p>
 
           <div className="hero-cta-wrap mt-6 md:mt-10 block">
